@@ -47,6 +47,7 @@ pipeline {
                 bat 'echo git push origin release/'+pom.version.replace("-SNAPSHOT","")
                 bat 'echo mvn release:prepare -s C:/Users/alban/.m2/settings.xml -B -Dusername=$USERNAME_VAR -Dpassword=$PASSWORD_VAR'
                 bat 'echo mvn release:perform -s C:/Users/alban/.m2/settings.xml -B -Dusername=$USERNAME_VAR -Dpassword=$PASSWORD_VAR'
+                }
             }
         }
     }
