@@ -40,7 +40,7 @@ pipeline {
                 script{​​​​
                     pom = readMavenPom file: 'pom.xml'
                 }
-                withCredentials([usernamePassword(credentialsId: 'mjidsaa', passwordVariable: 'PASSWORD_VAR', usernameVariable: 'USERNAME_VAR')]){​​​​
+                withCredentials([usernamePassword(credentialsId: 'oxovira', passwordVariable: 'PASSWORD_VAR', usernameVariable: 'USERNAME_VAR')]){​​​​
                 bat 'echo git config --global user.email "alban.tipe@gmail.com.com"'
                 bat 'echo git config --global user.name "Oxovira"'
                 bat 'echo git branch release/'+pom.version.replace("-SNAPSHOT","")
