@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage('Initialize'){
             steps{
-                sh'''
+                bat'''
                     echo "PATH = ${PATH}"
                     echo "MAVEN_HOME = ${MAVEN_HOME}"
                 '''
@@ -21,17 +21,17 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'mvn compile'
+                bat 'mvn compile'
             }
         }
         stage('Test') {
             steps {
-                sh 'mvn test'
+                bat 'mvn test'
             }
         }
         stage('Deploy') {
             steps {
-                sh 'mvn -s D:/Program Files/maven/apache-maven-3.6.3/conf/settings.xml deploy'
+                bat 'mvn -s D:/Program Files/maven/apache-maven-3.6.3/conf/settings.xml deploy'
             }
         }
     }
