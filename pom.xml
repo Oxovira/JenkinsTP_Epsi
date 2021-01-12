@@ -1,0 +1,10 @@
+<distributionManagement>
+  <snapshotRepository>
+    <id>helloworld-snapshot</id>
+    <url>http://localhost:8081/nexus/content/repositories/helloworld-snapshot/</url>
+  </snapshotRepository>
+  <repository>
+    <id>helloworld-release</id>
+    <url>http://localhost:8081/nexus/content/repositories/helloworld-release/</url>
+  </repository>
+</distributionManagement>
