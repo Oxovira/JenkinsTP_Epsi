@@ -35,7 +35,7 @@ pipeline {
             }
         }
         stage('Release'){
-            when {​​​​ expression {​​​​ params['Perform release ?']}​​​​ }​​​​
+            when {​​​​ expression {​​​​ params.REQUESTED_ACTION == 'greeting'}​​​​ }​​​​
             steps{
                 script{​​​​
                     pom = readMavenPom file: 'pom.xml'
