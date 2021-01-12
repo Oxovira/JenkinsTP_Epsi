@@ -31,7 +31,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh "mvn -s D:/Program Files/maven/apache-maven-3.6.3/conf/settings.xml deploy"
+                sh 'mvn -s D:/Program Files/maven/apache-maven-3.6.3/conf/settings.xml deploy'
             }
         }
     }
