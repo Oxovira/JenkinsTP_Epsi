@@ -35,7 +35,6 @@ pipeline {
             }
         }
         stage('Release'){
-            when {​​​​ expression {​​​​ params.REQUESTED_ACTION == 'greeting'}​​​​ }​​​​
             steps{
                 script{​​​​
                     pom = readMavenPom file: 'pom.xml'
