@@ -21,17 +21,17 @@ pipeline {
         }
         stage('Build') {
             steps {
-                bat 'mvn compile'
+                bat 'echo mvn compile'
             }
         }
         stage('Test') {
             steps {
-                bat 'mvn test'
+                bat 'echo mvn test'
             }
         }
         stage('Deploy') {
             steps {
-                bat 'mvn -s D:/Program Files/maven/apache-maven-3.6.3/conf/settings.xml deploy'
+                bat 'echo mvn -s D:/Program Files/maven/apache-maven-3.6.3/conf/settings.xml deploy'
             }
         }
     }
