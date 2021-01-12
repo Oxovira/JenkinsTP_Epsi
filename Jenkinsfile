@@ -5,7 +5,7 @@ pipeline {
     agent any
     tools{
         maven 'maven'
-        jdk 'JDK 15'
+        jdk 'JDK15'
     }
     parameters {
         booleanParam(name: "Perform release?", description:'',defaultValue: false)
@@ -15,7 +15,7 @@ pipeline {
             steps{
                 sh'''
                     echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
+                    echo "MAVEN_HOME = ${MAVEN_HOME}"
                 '''
             }
         }
