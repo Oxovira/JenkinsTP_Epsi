@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'mvn compile'
+                bat 'echo mvn compile'
             }
         }
         stage('Test') {
