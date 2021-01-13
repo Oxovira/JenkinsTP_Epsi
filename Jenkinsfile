@@ -41,7 +41,7 @@ pipeline {
                     {
                         pom = readMavenPom file: 'pom.xml'
                     }
-                    withCredentials([usernamePassword(credentialsId: 'Shiro', passwordVariable: 'PASSWORD_VAR', usernameVariable: 'USERNAME_VAR')]){
+                    withCredentials([usernamePassword(credentialsId: '8e79fa76-9d20-45ea-8486-dbd2b99f69ca', passwordVariable: 'PASSWORD_VAR', usernameVariable: 'USERNAME_VAR')]){
                     bat 'git config --global user.email "alban.tipe@gmail.com"'
                     bat 'git config --global user.name "Oxovira"'
                     bat 'git branch release/'+pom.version.replace("-SNAPSHOT","")
