@@ -35,8 +35,20 @@ pipeline {
             }
         }
         stage('Release'){
-            steps{
-                bat 'echo mvn test'
+            when { expression {params['Perform release ?']} }
+                steps {
+                    script{
+                        pom = readMavenPom file: 'pom.xml'
+                    }
+                withCredentials([usernamePassword(credentialsId: 'test', passwordVariable: 'PASSWORD_VAR', usernameVariable: 'USERNAME_VAR')]){
+                    bat 'git config --global user.email "alban.tipe@gmail.com"'
+                    bat 'git config --global user.name "Test"'
+                    bat 'git branch release/'+pom.version.replace("-SNAPSHOT","")
+                    bat 'git push origin release/'+pom.version.replace("-SNAPSHOT","")
+                    bat 'mvn release:prepare -s C:/Users/alban/.m2/settings.xml -B -Dusername=$USERNAME_VAR -Dpassword=$PASSWORD_VAR'
+                    bat 'mvn release:perform -s C:/Users/alban/.m2/settings.xml -B -Dusername=$USERNAME_VAR -Dpassword=$PASSWORD_VAR'
+                }
+                
             }
         }
     }
