@@ -21,9 +21,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                """${sh (
-                    returnStatus: true,
-                    script: 'mvn compile')}"""
+                sh 'mvn compile'
             }
         }
         stage('Test') {
