@@ -31,16 +31,17 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                bat 'echo mvn -s D:/Program Files/maven/apache-maven-3.6.3/conf/settings.xml deploy'
+                bat 'echo mvn -s C:/Users/alban/.m2/settings.xml deploy'
             }
         }
         stage('Release'){
             when { expression {params['Perform release ?']} }
                 steps {
-                    script{
+                    script
+                    {
                         pom = readMavenPom file: 'pom.xml'
                     }
-                withCredentials([usernamePassword(credentialsId: 'oxovira', passwordVariable: 'PASSWORD_VAR', usernameVariable: 'USERNAME_VAR')]){
+                    withCredentials([usernamePassword(credentialsId: 'oxovira', passwordVariable: 'PASSWORD_VAR', usernameVariable: 'USERNAME_VAR')]){
                     bat 'git config --global user.email "alban.tipe@gmail.com"'
                     bat 'git config --global user.name "oxovira"'
                     bat 'git branch release/'+pom.version.replace("-SNAPSHOT","")
