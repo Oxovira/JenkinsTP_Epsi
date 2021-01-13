@@ -35,7 +35,7 @@ pipeline {
             }
         }
         stage('Release'){
-            when { expression {params['Perform release ?']} }
+            when { expression {params['Perform release?']} }
                 steps {
                     script
                     {
