@@ -39,7 +39,7 @@ pipeline {
                 steps {
                     script
                     {
-                        def pom = readMavenPom file: 'pom.xml'
+                        pom = readMavenPom file: 'pom.xml'
                     }
                     withCredentials([usernamePassword(credentialsId: 'oxovira', passwordVariable: 'PASSWORD_VAR', usernameVariable: 'USERNAME_VAR')]){
                     bat 'git config --global user.email "alban.tipe@gmail.com"'
