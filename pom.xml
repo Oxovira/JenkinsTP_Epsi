@@ -1,3 +1,20 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+<modelVersion>4.0.0</modelVersion>
+
+<groupId>com.oxovira.helloword</groupId>
+    <artifactId>application-mvc</artifactId>
+    <packaging>war</packaging>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>Maven Application Java</name>
+    <url>http://maven.apache.org</url>
+
+    <properties>
+        <spring.version>3.0.3.RELEASE</spring.version>
+    </properties>
+
+
 <distributionManagement>
   <snapshotRepository>
     <id>helloworld-snapshot</id>
@@ -8,3 +25,9 @@
     <url>http://localhost:8081/nexus/content/repositories/helloworld-release/</url>
   </repository>
 </distributionManagement>
+
+
+ <build>
+        <finalName>helloword</finalName>
+    </build>
+</project>
