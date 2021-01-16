@@ -4,3 +4,5 @@ saadi.abdelmajid@gmail.com
 
 fichier jenkins avec un rapport
 lien github
+
+//bat 'git branch release/'+pom.version.replace("-SNAPSHOT","")
